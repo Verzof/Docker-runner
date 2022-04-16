@@ -28,6 +28,8 @@ docker run -d --name gitlab-runner --restart always \
 -v /var/run/docker.sock:/var/run/docker.sock \
 gitlab/gitlab-runner:latest
 
+chmod 666 /run/docker.sock
+
 docker run --rm -it -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register
 ```
 
